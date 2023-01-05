@@ -1,0 +1,74 @@
+Section          Base   Top    High   Length
+---------------- ------ ------ ------ -------
+.icon            D1A882 D1A9B0           12Eh
+.init.libs       D1A9B0 D1AA08            58h
+.libs            D1AA08 D1AA4C            44h
+.init.clock      D1AA4C D1AA4C             0h
+.init.reruncheck D1AA4C D1AA4C             0h
+.init            D1AA4C D1AA71            25h
+.fini            D1AA71 D1AAA5            34h
+.text            D1AAA5 D1AD1E           279h
+.data            D1AD1E D1BA50           D32h
+.rodata          D1BA50 D1D619          1BC9h
+.init_array      000000 000000             0h
+.ctors           000000 000000             0h
+.dtors           000000 000000             0h
+.fini_array      000000 000000             0h
+.bss             D052C6 D052C7 D13FD8      1h
+.header          D1A87F D1A882             3h
+
+Label                       Value
+-------------------------   ------
+___low_bss                = D052C6
+___len_bss                = 000001
+___heaptop                = D13FD8
+___heapbot                = D052C7
+___libs                   = D1AA08
+___init_array_count       = 000000
+___ctors_count            = 000000
+___dtors_count            = 000000
+___fini_array_count       = 000000
+__stack                   = D1A87E
+__sand                    = D1AAA5
+_os_DisableHomeTextBuffer = D1AAAE
+_os_EnableHomeTextBuffer  = D1AAC0
+_os_ClrLCD                = 02080C
+_os_HomeUp                = 020828
+_os_DrawStatusBar         = 021A3C
+_os_PutStrFull            = 021D2C
+.missingappvar            = D1BA50
+.libloadname              = D1BA55
+.libloadnamelen           = 000007
+.webaddress               = D1BA5D
+__start                   = D1AA4C
+___exithl                 = D1AA71
+skip._exit                = D1AA71
+skip.__Exit               = D1AA71
+skip._abort               = D1AA71
+_exit.sp                  = D1AA72
+_exit.flash_wait_states   = D1AA7C
+_SPQR_CheckKeypadPress    = D1AAD2
+_SPQR_Gameinit            = D1ABBD
+_ClearScreen              = D1ACA0
+_SPQR_GameStart           = D1ACA8
+_main                     = D1ACD2
+_SPQRFONDATA              = D1BA72
+_Senators                 = D1AD1E
+_Keypress                 = D052C6
+_SPQRFontPtr              = D1BA4D
+_.str                     = D1D584
+_.str.1                   = D1D598
+_.str.2                   = D1D5A8
+_.str.3                   = D1D5BE
+_.str.4                   = D1D5D2
+_.str.5                   = D1D5FA
+lib.LibLoad               = D1AA08
+_#fontlib_SetFont         = D1AA1D
+_#fontlib_DrawString      = D1AA21
+_#fontlib_ClearWindow     = D1AA25
+_#fontlib_HomeUp          = D1AA29
+lib.GRAPHX                = D1AA2D
+_#gfx_Begin               = D1AA36
+_#gfx_End                 = D1AA3A
+lib.KEYPADC               = D1AA3E
+_#kb_Scan                 = D1AA48
