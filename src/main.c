@@ -1,3 +1,35 @@
+/* HOW TO WRITE IN THIS FILE
+ *
+ * This is to keep this file readable and the codebase easily editable.
+ *
+ * 1. Be verbose.
+ * A smaller source file size is not worth sacrificing readability. It compiles to the same thing, write it out.
+ * 2. Name things accordingly
+ * While an int variable may be an int variable, dont name it 'int1', it's not helpful, instead name it something more appropriate, like 'MoneyInTreasury'
+ * 3. No bracing rules.
+ * As long as its correct, syntax does not matter. Just keep it readable
+ * 4. Explanatory comments
+ * Your comments should not be:
+ * // Declares an int named x with the value 3
+ * int x = 3;
+ * They should be like:
+ * // Declares x with 3 to be used as a counter later
+ * int x = 3;
+ * Similarly,
+ * Dont:
+ * //declares a function
+ * int myOinkyFunction(int[] numList) {
+ * Do:
+ * // *Purpose of function in relation to the rest of the program*
+ * int myOinkyFunction(int[] numList) {
+ * 5. Use snakeCase (first letter lowercase, words uppercase, eg. thisIsASentenceInSnakeCase)
+ * 6. Explain acronyms in comments, eg.
+ * // tiacv stands for 'This is a counter variable'
+ * int tiacv = 0;
+ *
+ * Thanks for reading this, and remember to follow it!
+ *
+ */
 #include <ti/screen.h>
 #include <ti/getcsc.h>
 #include <stdlib.h>
@@ -15,6 +47,8 @@
 
 // Incredibly boring initialization, *yawn*
 
+// Senatorplate stands for Senator Baseplate
+
 struct Senatorplate {
     char Name[30];
     int PoliticalAlignment;
@@ -24,6 +58,10 @@ struct Senatorplate {
     int BirthMonth;
 };
 struct Senatorplate Senators[75] = {{"Very Generic Senator", 5, 21, 0, 50, 6}};
+
+/* Function to 'Declare' senators
+ * Takes in all of the senator values and puts them into the 'Senators' array
+ */
 
 int DeclareSenator(int n, char N[], int P, int A, int F, int P2, int B);
 int DeclareSenator(int n, char Name[], int PoliticalAlignment, int Age, int Faction, int Popularity, int BirthMonth) 
@@ -41,6 +79,10 @@ int DeclareSenator(int n, char Name[], int PoliticalAlignment, int Age, int Fact
 
 char output[] = "";
 bool Keypress = false;
+
+// Checks for each keypad press, and return an int value
+// 1-9 is keypad
+// 10 is enter
 
 int SPQR_CheckKeypadPress(void)
 {
@@ -98,6 +140,10 @@ int SPQR_CheckKeypadPress(void)
     Keypress = false;
     return 0;
 }
+// Game initialization
+// Sets the starter senators, new game will generate more senators by replacing the items in the Senators array
+// Loading existing game will completely replace them anyway
+
 void SPQR_Gameinit(void) {
     gfx_Begin();
     fontlib_SetFont(SPQRFontPtr, 0);
@@ -108,7 +154,11 @@ void SPQR_Gameinit(void) {
     DeclareSenator(3, "Marcus Tullius Cicero", 4, 46, 3, 60, 1);
     DeclareSenator(4, "Marcus Porcius Cato", 0, 35, 2, 63, 6);
 }
+//Clears the screen completely, and moves the cursor the the top-left
 void ClearScreen(void) {fontlib_ClearWindow();fontlib_HomeUp();}
+
+
+// Main game loop
 void SPQR_GameStart() 
 {
     int QuitCon = 0;
@@ -124,10 +174,14 @@ void SPQR_GameStart()
     }
 }
 
+// Closes the game
+
 void SPQR_Shutdown(void)
 {
     gfx_End();
 }
+
+// Calls the functions, also main
 
 int main(void)
 {
